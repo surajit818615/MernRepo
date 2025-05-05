@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS2</title>
+</head>
+
+<body>
+    <script>
+        var data = 200; // Global variable declare kiya gaya hai, jo har function ke liye accessible hai
+
+        // Function 'a' define kiya gaya hai
+        function a() {
+            document.writeln(data); // Webpage par data print karega aur ek new line mein likhega (writeln)
+        }
+        
+        
+        // Function 'b' define kiya gaya hai
+        function b() {
+            document.write(data); // Webpage par data print karega bina new line ke (write)
+        }
+
+        a(); // Function 'a' ko call kiya gaya hai
+        document.write("<hr>");
+        b(); // Function 'b' ko call kiya gaya hai
+    </script>
+</body>
+
+</html>
