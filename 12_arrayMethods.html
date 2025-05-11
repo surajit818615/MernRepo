@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array in JavaScript</title>
+</head>
+
+<body>
+    <script>
+        // first method literal notation
+        var emp = ["Sonu", "Vimal", "Ramesh"]
+        for (i = 0; i < emp.length; i++) {
+            document.writeln(emp[i] + ".<br>");
+        }
+        document.writeln("<br>");
+        // second method by creating the object
+        var i;
+        var empp = new Array();
+        empp[0] = "Arun";
+        empp[1] = "Varun";
+        empp[2] = "Suresh";
+        empp[3] = "Kamal";
+        for (i = 0; i < empp.length; i++) {
+            document.writeln(empp[i] + ".<br>");
+        }
+        document.writeln("<br>");
+        // third method using the constructor
+        var employee = new Array("Jay", "Sanjay", "Smith");
+        for (i = 0; i < employee.length; i++) {
+            document.writeln(employee[i] + ".<br>");
+        }
+    </script>
+</body>
+
+</html>
