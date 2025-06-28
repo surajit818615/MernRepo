@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #081B29;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: colorful 30s linear infinite;
+}
+
+@keyframes colorful {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.bar-seconds,
+.number-hours {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.bar-seconds span {
+    position: absolute;
+    /* 360deg / 60 = 6deg */
+    transform: rotate(calc(var(--index) * 6deg));
+    inset: -20px;
+    text-align: center;
+}
+
+.bar-seconds span p {
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #0ef;
+}
+
+/* 5n = every multiple of 5 */
+.bar-seconds span:nth-child(5n) p {
+    background: yellow;
+    width: 6px;
+    height: 18px;
+    transform: translateY(1px);
+}
+
+.number-hours span {
+    position: absolute;
+    /* 360deg /12 = 30deg */
+    transform: rotate(calc(var(--index) * 30deg));
+    inset: 6px;
+    text-align: center;
+}
+
+.number-hours span p {
+    font-size: 52px;
+    color: #0ef;
+    text-shadow: 0 0 10px orange;
+    transform: rotate(calc(var(--index) * -30deg));
+}
+
+.hands-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hands-box .hand {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.hands-box .hand i {
+    display: inline-block;
+    transform-origin: bottom;
+    border-radius: 50%;
+    box-shadow: 0 0 9px #0ef;
+}
+
+.hands-box .hours {
+    width: 320px;
+    height: 320px;
+}
+
+.hands-box .hours i {
+    width: 8px;
+    /* half of parent hright */
+    height: 160px;
+    background: white;
+}
+
+.hands-box .minutes {
+    width: 450px;
+    height: 450px;
+}
+
+/* center dot bottom */
+.hands-box .minutes::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: #0ef;
+    border-radius: 50%;
+    box-shadow: 0 0 5px orangered;
+}
+
+.hands-box .minutes i {
+    width: 7px;
+    /* half of parent hright */
+    height: 225px;
+    background: white;
+}
+
+.hands-box .seconds {
+    width: 480px;
+    height: 480px;
+}
+
+/* center dot top */
+.hands-box .seconds::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+}
+
+.hands-box .seconds i {
+    width: 4px;
+    /* half of parent hright */
+    height: calc(240px + 70px );
+    background: white;
+    box-shadow: none;
+}
